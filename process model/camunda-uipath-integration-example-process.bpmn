@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="957e002" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.6.0">
+  <bpmn:collaboration id="Collaboration_1rdq3hr" name="02 - Simple-UIPath-Integration-process - without UiPath config">
+    <bpmn:participant id="Participant_1axpu5k" name="Camunda Process orchestration" processRef="Process_wtcuyxb" />
+    <bpmn:textAnnotation id="TextAnnotation_1blj1lk">
+      <bpmn:text>The legacy system does not have an API available. Only a graphical UI =&gt; RPA usecase</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1dxsm5k" associationDirection="None" sourceRef="Activity_0ukwlzb" targetRef="TextAnnotation_1blj1lk" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_wtcuyxb" name="Simple UIPath integration" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="New customer&#10;shall be onboarded">
+      <bpmn:outgoing>Flow_1wq4g4e</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Activity_0ukwlzb" name="Create user in legacy system via RPA bot" zeebe:modelerTemplate="io.camunda.connectors.UIPath.v1" zeebe:modelerTemplateVersion="4" zeebe:modelerTemplateIcon="data:image/svg+xml;utf8,%3C%3Fxml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;%3F%3E%3Csvg version=&#39;1.1&#39; width=&#39;18&#39; height=&#39;18&#39; id=&#39;Extra_Large&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; xmlns:xlink=&#39;http://www.w3.org/1999/xlink&#39; x=&#39;0px&#39; y=&#39;0px&#39; viewBox=&#39;0 0 3261 1200&#39; style=&#39;enable-background:new 0 0 3261 1200;&#39; xml:space=&#39;preserve&#39;%3E%3Cstyle type=&#39;text/css&#39;%3E .st0%7Bfill:%23FA4616;%7D%0A%3C/style%3E%3Cg%3E%3Cpath class=&#39;st0&#39; d=&#39;M0,0h1200v1200H0V0z M124.2,1075.8h951.6V124.2H124.2V1075.8z M604,309.5h124.2v363.6 c0,164.3-93.2,263.4-250.4,263.4c-154.3,0-245.4-97.2-245.4-263.4V309.5h124.2v363.6c0,91.2,38.1,146.2,124.2,146.2 c83.1,0,123.2-52.1,123.2-146.2V309.5z M964.6,309.5c0,44.1-32.1,74.1-76.1,74.1c-44.1,0-76.1-30-76.1-74.1 c0-45.1,32.1-76.1,76.1-76.1C932.5,233.4,964.6,264.4,964.6,309.5z M826.4,442.7h124.2v487.8H826.4V442.7z M1784,517.9 c0,133.2-88.1,212.4-223.4,212.4h-112.2v200.3h-124.2v-621h236.4C1697.8,309.5,1784,389.6,1784,517.9z M1657.8,517.9 c0-68.1-39.1-108.2-110.2-108.2h-99.2v221.4h99.2C1618.7,631.1,1657.8,591,1657.8,517.9z M2201.7,442.7h124.2v487.8h-124.2v-55.1 c-33.1,39.1-85.1,61.1-158.3,61.1c-132.2,0-225.4-104.2-225.4-249.4c0-144.2,91.2-250.4,225.4-250.4c71.1,0,125.2,25,158.3,67.1 V442.7z M2201.7,687.1c0-84.1-50.1-142.2-129.2-142.2c-79.1,0-128.2,55.1-128.2,142.2c0,81.1,44.1,140.2,128.2,140.2 C2148.6,827.4,2201.7,772.3,2201.7,687.1z M2629.4,824.4h49.1v106.2h-65.1c-118.2,0-169.3-56.1-169.3-171.3V547.9H2386V442.7h58.1 V309.5h124.2v133.2h109.2v105.2h-109.2v212.3C2568.3,803.3,2581.3,824.4,2629.4,824.4z M3214.3,647.1v283.5h-124.2V661.1 c0-74.1-38.1-122.2-111.2-122.2s-117.2,50.1-117.2,133.2v258.4h-124.2V279.5h124.2v213.4c31.1-37.1,80.1-57.1,147.2-57.1 C3124.2,435.7,3214.3,518.9,3214.3,647.1z M3200,279.5h21.7v4.2h-8.5v25.8h-4.8v-25.8h-8.5V279.5z M3261,279.5v30h-4.8v-22.8 l-9.7,22.8h-3.6l-9.7-22.8v22.8h-4.8v-30h6l10.3,23.4l10.3-23.4H3261z&#39;/%3E%3C/g%3E%3C/svg%3E%0A">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda:http-json:1" />
+        <zeebe:ioMapping>
+          <zeebe:input source="addQueueItem" target="operationType" />
+          <zeebe:input source="bearer" target="authentication.type" />
+          <zeebe:input source="{{secrets.UIPATH-BEARER-TOKEN}}" target="authentication.token" />
+          <zeebe:input source="post" target="method" />
+          <zeebe:input target="cloudUrl" />
+          <zeebe:input target="cloudOrg" />
+          <zeebe:input target="cloudTenant" />
+          <zeebe:input target="organizationUnitId" />
+          <zeebe:input source="={&#34;X-UIPATH-OrganizationUnitId&#34;:organizationUnitId, &#34;Content-Type&#34;:&#34;application/json&#34;}" target="headers" />
+          <zeebe:input source="camunda" target="queueName" />
+          <zeebe:input source="Low" target="priority" />
+          <zeebe:input source="=customerToBeOnboarded" target="specificContent" />
+          <zeebe:input source="Camunda item" target="reference" />
+          <zeebe:input source="={&#34;itemData&#34;:{&#34;DeferDate&#34;:if deferDate = null then null else deferDate, &#34;DueDate&#34;:if dueDate = null then null else dueDate,&#34;Priority&#34;:if priority = null then null else priority,&#34;Name&#34;:queueName,&#34;SpecificContent&#34;:if specificContent = null then null else specificContent,&#34;Reference&#34;:if reference = null then null else reference}}" target="body" />
+          <zeebe:input source="20" target="connectionTimeoutInSeconds" />
+          <zeebe:input source="=&#34;https:&#34;+&#34;//&#34;+cloudUrl+&#34;/&#34;+cloudOrg+&#34;/&#34;+cloudTenant+&#34;/orchestrator_/odata/Queues/UiPathODataSvc.AddQueueItem&#34;" target="url" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders>
+          <zeebe:header key="resultExpression" value="={itemId: response.body.Id}" />
+        </zeebe:taskHeaders>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0vhmfkk</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rtvw3b</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="Event_050j2ap" name="New customer&#10;successfully onboarded">
+      <bpmn:incoming>Flow_1rtvw3b</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="Activity_0mndzhk" name="Enter&#10;bank account creation details">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formId="form_enter-bank-account-creation-details" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1wq4g4e</bpmn:incoming>
+      <bpmn:outgoing>Flow_0vhmfkk</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1wq4g4e" sourceRef="StartEvent_1" targetRef="Activity_0mndzhk" />
+    <bpmn:sequenceFlow id="Flow_0vhmfkk" sourceRef="Activity_0mndzhk" targetRef="Activity_0ukwlzb" />
+    <bpmn:sequenceFlow id="Flow_1rtvw3b" sourceRef="Activity_0ukwlzb" targetRef="Event_050j2ap" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1rdq3hr">
+      <bpmndi:BPMNShape id="Participant_1axpu5k_di" bpmnElement="Participant_1axpu5k" isHorizontal="true">
+        <dc:Bounds x="151" y="80" width="709" height="290" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="252" y="220" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="235" y="263" width="71" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0zunfqk_di" bpmnElement="Activity_0ukwlzb">
+        <dc:Bounds x="530" y="198" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_050j2ap_di" bpmnElement="Event_050j2ap">
+        <dc:Bounds x="722" y="220" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="705" y="263" width="71" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0z34m42_di" bpmnElement="Activity_0mndzhk">
+        <dc:Bounds x="370" y="198" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1wq4g4e_di" bpmnElement="Flow_1wq4g4e">
+        <di:waypoint x="288" y="238" />
+        <di:waypoint x="370" y="238" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0vhmfkk_di" bpmnElement="Flow_0vhmfkk">
+        <di:waypoint x="470" y="238" />
+        <di:waypoint x="530" y="238" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rtvw3b_di" bpmnElement="Flow_1rtvw3b">
+        <di:waypoint x="630" y="238" />
+        <di:waypoint x="722" y="238" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1dxsm5k_di" bpmnElement="Association_1dxsm5k">
+        <di:waypoint x="587" y="198" />
+        <di:waypoint x="593" y="161" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_1blj1lk_di" bpmnElement="TextAnnotation_1blj1lk">
+        <dc:Bounds x="550" y="120" width="300" height="41" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -1,0 +1,225 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "ac16d31"
+  },
+  "schemaVersion": 16,
+  "id": "form_enter-bank-account-creation-details",
+  "components": [
+    {
+      "text": "### Enter bank account creation details for onboarding",
+      "type": "text",
+      "id": "Heading_0",
+      "layout": {
+        "row": "row_0",
+        "columns": null
+      }
+    },
+    {
+      "text": "##### Please provide personal information of the customer to be onboarded",
+      "type": "text",
+      "id": "Subheading_1",
+      "layout": {
+        "row": "row_1",
+        "columns": null
+      }
+    },
+    {
+      "type": "textfield",
+      "id": "Textfield_2",
+      "label": "First name",
+      "validate": {
+        "minLength": 2,
+        "required": true
+      },
+      "key": "firstnameFormInput",
+      "layout": {
+        "row": "row_2",
+        "columns": 8
+      }
+    },
+    {
+      "label": "Last name",
+      "type": "textfield",
+      "layout": {
+        "row": "row_2",
+        "columns": null
+      },
+      "id": "Field_0kaxlz5",
+      "key": "lastnameFormInput",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "computeOn": "change",
+      "label": "Expression",
+      "type": "expression",
+      "layout": {
+        "row": "Row_0uiw2vv",
+        "columns": null
+      },
+      "id": "Field_1c2x9km",
+      "key": "customerToBeOnboarded",
+      "expression": "={\"firstname\": firstnameFormInput, \"lastname\" : lastnameFormInput}"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Date of Birth",
+      "type": "datetime",
+      "id": "Date_3",
+      "validate": {
+        "required": false
+      },
+      "key": "dateOfBirth",
+      "layout": {
+        "row": "row_3",
+        "columns": null
+      }
+    },
+    {
+      "values": [
+        {
+          "value": "male",
+          "label": "Male"
+        },
+        {
+          "value": "female",
+          "label": "Female"
+        },
+        {
+          "value": "other",
+          "label": "Other"
+        }
+      ],
+      "type": "select",
+      "id": "Select_4",
+      "label": "Gender",
+      "validate": {
+        "required": false
+      },
+      "key": "gender",
+      "layout": {
+        "row": "row_3",
+        "columns": null
+      }
+    },
+    {
+      "text": "##### Contact information",
+      "type": "text",
+      "id": "Subheading_5",
+      "layout": {
+        "row": "row_4",
+        "columns": null
+      }
+    },
+    {
+      "type": "textfield",
+      "id": "Textfield_6",
+      "label": "Email",
+      "validate": {
+        "minLength": 6,
+        "maxLength": 50,
+        "required": false
+      },
+      "key": "email",
+      "layout": {
+        "row": "row_5",
+        "columns": null
+      }
+    },
+    {
+      "type": "textfield",
+      "id": "Textfield_7",
+      "label": "Phone Number",
+      "validate": {
+        "minLength": 10,
+        "maxLength": 15,
+        "required": false
+      },
+      "key": "phoneNumber",
+      "layout": {
+        "row": "row_5",
+        "columns": null
+      }
+    },
+    {
+      "text": "##### Address details",
+      "type": "text",
+      "id": "Subheading_8",
+      "layout": {
+        "row": "row_6",
+        "columns": null
+      }
+    },
+    {
+      "type": "textfield",
+      "id": "Textfield_9",
+      "label": "Street Address",
+      "validate": {
+        "minLength": 5,
+        "maxLength": 100,
+        "required": false
+      },
+      "key": "streetAddress",
+      "layout": {
+        "row": "row_7",
+        "columns": null
+      }
+    },
+    {
+      "type": "textfield",
+      "id": "Textfield_10",
+      "label": "City",
+      "validate": {
+        "minLength": 2,
+        "maxLength": 50,
+        "required": false
+      },
+      "key": "city",
+      "layout": {
+        "row": "row_7",
+        "columns": null
+      }
+    },
+    {
+      "values": [
+        {
+          "value": "USA",
+          "label": "USA"
+        },
+        {
+          "value": "Canada",
+          "label": "Canada"
+        },
+        {
+          "value": "UK",
+          "label": "UK"
+        },
+        {
+          "value": "Australia",
+          "label": "Australia"
+        },
+        {
+          "value": "Germany",
+          "label": "Germany"
+        }
+      ],
+      "type": "select",
+      "id": "Select_11",
+      "label": "Country",
+      "validate": {
+        "required": false
+      },
+      "key": "country",
+      "layout": {
+        "row": "row_7",
+        "columns": null
+      }
+    }
+  ],
+  "generated": true,
+  "type": "default"
+}
